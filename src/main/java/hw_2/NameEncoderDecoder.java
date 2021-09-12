@@ -11,7 +11,8 @@ public class NameEncoderDecoder {
     }
     public String decode(String name){
         return name.replace("NOTFORYOU","")
-                .replace("YESNOTFORYOU", "")
+                .replace("YESYESNOTFORYOU", "")
+                .replace("YES", "")
                 .replace("1", "e")
                 .replace("2", "u")
                 .replace("3", "i")

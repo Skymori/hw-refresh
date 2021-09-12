@@ -5,7 +5,7 @@ public class Counter {
         return number;
     }
     public long next(long number){
-        return number++;
+        return ++number;
     }
     public long prev(long number){
         return --number;
