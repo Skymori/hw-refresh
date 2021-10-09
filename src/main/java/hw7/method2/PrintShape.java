@@ -1,8 +1,6 @@
 package hw7.method2;
 
-import hw7.method2.figure.*;
-
-public class PrintShape implements Print{
+public class PrintShape implements Printer {
     private Shape shape;
 
     public PrintShape(Shape shape) {
@@ -10,7 +8,7 @@ public class PrintShape implements Print{
     }
 
     @Override
-    public void printName() {
-        shape.printName();
+    public void namePrinter() {
+        shape.namePrinter();
     }
 }
