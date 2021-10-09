@@ -4,16 +4,14 @@ import hw7.method2.figure.*;
 
 public class Main {
     public static void main(String[] args) {
-        Shape circle = new Circle();
-        Shape cone = new Cone();
-        Shape oval = new Oval();
-        Shape quad = new Quad();
-        Shape qube = new Qube();
-
-        circle.printName();
-        cone.printName();
-        oval.printName();
-        quad.printName();
-        qube.printName();
+        Shape[] shapes = new Shape[5];
+        shapes[0] = new Circle();
+        shapes[1] = new Cone();
+        shapes[2] = new Oval();
+        shapes[3] = new Quad();
+        shapes[4] = new Qube();
+        for (Shape shape : shapes){
+            new PrintShape(shape).printName();
+        }
     }
 }
