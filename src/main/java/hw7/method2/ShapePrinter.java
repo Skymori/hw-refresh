@@ -1,9 +1,9 @@
 package hw7.method2;
 
-public class PrintShape implements Printer {
+public class ShapePrinter implements Printer {
     private Shape shape;
 
-    public PrintShape(Shape shape) {
+    public ShapePrinter(Shape shape) {
         this.shape = shape;
     }
 

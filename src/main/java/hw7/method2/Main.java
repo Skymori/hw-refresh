@@ -11,9 +11,9 @@ public class Main {
         shapes[3] = new Quad();
         shapes[4] = new Qube();
         for (Shape shape : shapes){
-            new PrintShape(shape).namePrinter();
+            new ShapePrinter(shape).namePrinter();
         }
-        PrintShape printShape = new PrintShape(shapes[1]);
-        printShape.namePrinter();
+        ShapePrinter shapePrinter = new ShapePrinter(shapes[1]);
+        shapePrinter.namePrinter();
     }
 }
