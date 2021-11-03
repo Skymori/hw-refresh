@@ -20,7 +20,7 @@ public class MyQueue<E> {
             size++;
             return true;
         } else {
-            return false;
+            throw new IllegalStateException();
         }
     }
 
