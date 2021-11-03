@@ -1,11 +1,13 @@
 package hw8.linkedList;
 
+import java.util.StringJoiner;
+
 public class MyLinkedList<E> {
     private MyNode<E> firstNode;
     private MyNode<E> lastNode;
     private int size = 0;
 
-    private static class MyNode<E> {
+    public static class MyNode<E> {
         MyNode<E> prev;
         E element;
         MyNode<E> next;
@@ -60,12 +62,15 @@ public class MyLinkedList<E> {
         return node;
     }
 
+
     @Override
-    public String toString() {
-        return "MyLinkedList{" +
-                "firstNode=" + firstNode +
-                ", lastNode=" + lastNode +
-                ", size=" + size +
-                '}';
+        public String toString() {
+            String beginning = "MyLinkedList: " + "size=" + size + ", [";
+            StringJoiner joiner = new StringJoiner(", ", beginning, "]");
+            for (int i = 0; i < size; i++) {
+                joiner.add("" + get(i));
+            }
+
+            return joiner.toString();
     }
 }

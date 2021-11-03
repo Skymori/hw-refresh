@@ -3,7 +3,7 @@ package hw8.arrayList;
 public class Main {
     public static void main(String[] args) {
 
-        MyArrayList<Integer> arr = new MyArrayList<>();
+        MyArrayList<Integer> arr = new MyArrayList<Integer>();
         arr.add(1);
         arr.add(2);
         arr.add(3);

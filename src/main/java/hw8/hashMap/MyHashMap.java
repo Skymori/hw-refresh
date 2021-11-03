@@ -106,17 +106,25 @@ public class MyHashMap<K, V> {
         return size;
     }
 
-    public MyNode<K,V> get(K key){
-        int index = indexOf(key);
-        MyNode<K,V> node, getValue = null;
-        if (hashArray[index].next == null) getValue = hashArray[index];
-        else {
-            node = hashArray[index].next;
-            do {
-                if (Objects.equals(node.key,key)) getValue = node;
-            }while ((node = node.next)!= null);
-        }
-        return getValue;
+    public V get(K key){
+        for (MyNode<K,V> node : hashArray){
+            if (node!= null){
+                if (node.key == key){
+                    return node.value;
+                }else {
+                    while (node != null){
+                        node = node.next;
+                        if (node != null){
+                            if (node.key == key){
+                                return node.value;
+                            }
+                        }else {
+                            break;
+                        }
+                    }
+                }
+            }
+        }return null;
     }
 
 }

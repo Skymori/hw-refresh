@@ -6,18 +6,17 @@ import java.util.Objects;
 public class MyArrayList<E> {
     private E[] array;
     private int sizeE;
+    private static final int DEFAULT_CAPACITY = 10;
 
     public MyArrayList(E[] array) {
         this.array = array;
         sizeE = 0;
     }
 
-    public MyArrayList() {
-        this(10);
-    }
 
-    public MyArrayList(int capacity) {
-        this.array = (E[]) new Object[capacity];
+
+    public MyArrayList() {
+        this.array = (E[]) new Object[DEFAULT_CAPACITY];
         sizeE = 0;
     }
 
@@ -52,7 +51,7 @@ public class MyArrayList<E> {
 
     public void clear() {
         sizeE = 0;
-        array = (E[]) new Object[10];
+        array = (E[]) new Object[DEFAULT_CAPACITY];
 
     }
 
