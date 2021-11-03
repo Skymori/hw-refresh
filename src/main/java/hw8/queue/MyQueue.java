@@ -17,6 +17,7 @@ public class MyQueue<E> {
     public boolean add(E element) {
         if (size < data.length) {
             data[size] = element;
+            size++;
             return true;
         } else {
             return false;
