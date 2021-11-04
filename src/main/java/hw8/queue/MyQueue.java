@@ -46,8 +46,17 @@ public class MyQueue<E> {
         return data[0];
     }
 
-    public E pool() {
-        return remove(0);
+    public E poll() {
+        E element = data[0];
+        if (data[0]!= null){
+            data[0] = null;
+            for (int i = 0; i < size; i++) {
+                data[i] = data[i + 1];
+            }
+            size--;
+        }
+        return element;
+
     }
 
     @Override
