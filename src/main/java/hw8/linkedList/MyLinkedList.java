@@ -1,5 +1,6 @@
 package hw8.linkedList;
 
+import java.util.Objects;
 import java.util.StringJoiner;
 
 public class MyLinkedList<E> {
@@ -46,31 +47,31 @@ public class MyLinkedList<E> {
         size--;
 
     }
-    public void clear(){
-        firstNode =null;
+
+    public void clear() {
+        firstNode = null;
         lastNode = null;
         size = 0;
     }
 
     public MyNode<E> get(int index) {
+        Objects.checkIndex(index, size);
         MyNode<E> node = firstNode;
-        if (index >= 0 && index <= size) {
-            for (int i = 0; i < index; i++) {
-                node = node.next;
-            }
+        for (int i = 0; i < index; i++) {
+            node = node.next;
         }
         return node;
     }
 
 
     @Override
-        public String toString() {
-            String beginning = "MyLinkedList: " + "size=" + size + ", [";
-            StringJoiner joiner = new StringJoiner(", ", beginning, "]");
-            for (int i = 0; i < size; i++) {
-                joiner.add("" + get(i));
-            }
+    public String toString() {
+        String beginning = "MyLinkedList: " + "size=" + size + ", [";
+        StringJoiner joiner = new StringJoiner(", ", beginning, "]");
+        for (int i = 0; i < size; i++) {
+            joiner.add("" + get(i));
+        }
 
-            return joiner.toString();
+        return joiner.toString();
     }
 }

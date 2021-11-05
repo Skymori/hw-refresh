@@ -9,7 +9,7 @@ public class Main {
         arr.add(3);
         arr.add(4);
         System.out.println(arr);
-        System.out.println(arr.get(0));
+        System.out.println(arr.get(2));
         System.out.println(arr.size());
         System.out.println("--------------");
         arr.remove(2);

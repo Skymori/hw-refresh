@@ -14,7 +14,6 @@ public class MyArrayList<E> {
     }
 
 
-
     public MyArrayList() {
         this.array = (E[]) new Object[DEFAULT_CAPACITY];
         sizeE = 0;
@@ -31,6 +30,7 @@ public class MyArrayList<E> {
     }
 
     public E get(int index) {
+        Objects.checkIndex(index,sizeE);
         return array[index];
     }
 
