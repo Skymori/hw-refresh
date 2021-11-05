@@ -39,7 +39,8 @@ public class MyLinkedList<E> {
     }
 
     public void remove(int index) {
-        MyNode<E> node = get(index);
+        Objects.checkIndex(index, size);
+        MyNode<E> node = firstNode;
         if (node.prev == null) firstNode = node.next;
         else node.prev.next = node.next;
         if (node.next == null) lastNode = node.prev;
@@ -54,17 +55,15 @@ public class MyLinkedList<E> {
         size = 0;
     }
 
-    public MyNode<E> get(int index) {
+    public E get(Integer index) {
         Objects.checkIndex(index, size);
         MyNode<E> node = firstNode;
         for (int i = 0; i < index; i++) {
             node = node.next;
         }
-        return node;
+        return node.element;
     }
 
-
-    @Override
     public String toString() {
         String beginning = "MyLinkedList: " + "size=" + size + ", [";
         StringJoiner joiner = new StringJoiner(", ", beginning, "]");

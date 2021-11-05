@@ -11,7 +11,7 @@ public class Main {
         myLinkedList.remove(1);
         System.out.println(myLinkedList);
 
-        System.out.println(myLinkedList.get(0).element);
+        System.out.println(myLinkedList.get(1));
         myLinkedList.clear();
         System.out.println(myLinkedList);
 
