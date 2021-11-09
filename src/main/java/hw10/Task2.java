@@ -22,7 +22,7 @@ public class Task2 {
         List<String> stringList = getUser().stream()
                 .map(User::getFirstName)
                 .map(String::toUpperCase)
-                .sorted(Comparator.comparing(String::toString))
+                .sorted(Comparator.comparing(String::toString).reversed())
                 .collect(Collectors.toList());
         System.out.println(stringList);
     }
