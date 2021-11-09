@@ -5,7 +5,6 @@ import hw10.resources.User;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Task2 {
@@ -21,9 +20,9 @@ public class Task2 {
 
     public static void main(String[] args) {
         List<String> stringList = getUser().stream()
-                .map(Objects::toString)
+                .map(User::getFirstName)
                 .map(String::toUpperCase)
-                .sorted(Comparator.reverseOrder())
+                .sorted(Comparator.comparing(String::toString))
                 .collect(Collectors.toList());
         System.out.println(stringList);
     }
