@@ -14,9 +14,10 @@ public class Task1 {
     }
 
     public static void main(String[] args) {
-        List<User> userStream = getUser().stream()
+        String userStream = getUser().stream()
                 .filter(index -> index.getId() % 2 != 0)
-                .collect(Collectors.toList());
+                .map(users -> users.getId() + " " + users.getFirstName())
+                .collect(Collectors.joining(", "));
         System.out.println(userStream);
     }
 }
